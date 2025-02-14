@@ -1,0 +1,27 @@
+function showLove() {
+    document.getElementById("message").style.display = "block";
+
+    for (let i = 0; i < 20; i++) {
+        createHeart();
+    }
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML ="💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗"
+    document.body.appendChild(heart);
+
+    let x = Math.random() * window.innerWidth;
+    let y = window.innerHeight;
+    
+    heart.style.left = `${x}px`;
+    heart.style.top = `${y}px`;
+
+    let animationDuration = Math.random() * 2 + 3;
+    heart.style.animation = `float ${animationDuration}s linear`;
+
+    setTimeout(() => {
+        heart.remove();
+    }, animationDuration * 1000);
+}
